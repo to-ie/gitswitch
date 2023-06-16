@@ -111,14 +111,27 @@ else
   echo "${profile2}" > ~/.gitswitch/profile2
   printf "${GREEN}Perfect, the second profile is created.${NC}\n"
 
-  # setup ~/.gitswitch/gscurrent
-  # set current profile
+  # set current profile and gscurrent file
+  printf "${BLUE}We will now setup ${profile1} as your current profile.${NC}\n"
   touch ~/.gitswitch/gscurrent
   echo "profile1" > ~/.gitswitch/gscurrent
   cp ~/.gitswitch/git-credentials/profile1/.gitconfig ~/.gitconfig 
   cp ~/.gitswitch/git-credentials/profile1/.git-credentials ~/.git-credentials 
+  printf "${GREEN}${profile1} is not the current profile.${NC}\n"
 
-  # download gitswitch script from github(?) and move it to ~/.gitswitch
+  # download gitswitch script from github and move it to ~/.gitswitch
+  printf "${BLUE}Hold on while we do some final bits of configuration...${NC}\n"
+  cd ~/.gitswitch/
+  git clone https://github.com/to-ie/gitswitch
+  mv ~/.gitswitch/gitswitch/switch.sh ~/.gitswitch/switch.sh
+  rm -r ~/.gitswitch/gitswitch/
+
   # setup alias 
+  echo "alias gitswitch='bash ~/Documents/git-switcher/switch.sh'" >> ~/.bashrc
+  source ~/.bashrc
+  printf "${GREEN}Alias set in .bashrc.${NC}\n"
+
+  # all done
+  printf "${GREEN}You can now switch GitHub profiles by typing 'gitswitch' in your terminal.${NC}\n"
 
 fi
