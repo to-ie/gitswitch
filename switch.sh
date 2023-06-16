@@ -102,7 +102,7 @@ else
   echo "  email = ${p2email}" >> ~/.gitswitch/git-credentials/profile2/.gitconfig
   echo "[credential]" >> ~/.gitswitch/git-credentials/profile2/.gitconfig
   echo "  helper = store" >> ~/.gitswitch/git-credentials/profile2/.gitconfig
-  echo "https://${p2name}:${p1accesskey}@github.com" >> ~/.gitswitch/git-credentials/profile2/.git-credentials
+  echo "https://${p2name}:${p2accesskey}@github.com" >> ~/.gitswitch/git-credentials/profile2/.git-credentials
   echo "${profile2}" > ~/.gitswitch/profile2
   printf "${GREEN}Perfect, the second profile is created.${NC}\n"
 
