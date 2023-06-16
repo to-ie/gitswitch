@@ -42,7 +42,7 @@ if  test -e ~/.gitswitch/gscurrent; then
     cp ~/.gitswitch/git-credentials/profile2/.git-credentials ~/.git-credentials 
     echo profile2 > ~/.gitswitch/gscurrent
     profile2=$(cat ~/.gitswitch/profile2) 
-    printf "${GREEN}You are now logged in as ${profile2}${NC}\n"
+    printf "${GREEN}You are now logged in as ${profile2}.${NC}\n"
     echo
     exit
   fi
@@ -53,7 +53,7 @@ if  test -e ~/.gitswitch/gscurrent; then
     cp ~/.gitswitch/git-credentials/profile1/.git-credentials ~/.git-credentials 
     echo profile1 > ~/.gitswitch/gscurrent
     profile1=$(cat ~/.gitswitch/profile1)
-    printf "${GREEN}You are now logged in as ${profile1}${NC}\n"
+    printf "${GREEN}You are now logged in as ${profile1}.${NC}\n"
     echo
     exit
   fi
@@ -71,12 +71,12 @@ else
   mkdir ~/.gitswitch/git-credentials
 
   # Create profile 1
-  printf "${BLUE}Let's setup the first account. Answer the questions below:${NC}\n"
-  read -p "What is the name of your first profile? " profile1
+  printf "${BLUE}Let's setup the first profile.${NC}\n"
+  read -p "What do you want to call this profile? (chose something that makes sense to you) " profile1
   mkdir ~/.gitswitch/git-credentials/profile1
-  read -p "What is the username of the GitHub account? " p1name
-  read -p "What is the email address associated to the GitHub account? " p1email
-  read -p "What is the Personal Access Key of this account? " p1accesskey
+  read -p "What is your GitHub username for this account? " p1name
+  read -p "What is the email address associated to this GitHub account? " p1email
+  read -p "Finally, what is the Personal Access Key for this account? " p1accesskey
 
   # create config files for profile 1
   echo "[user]" >> ~/.gitswitch/git-credentials/profile1/.gitconfig
@@ -89,12 +89,12 @@ else
   printf "${GREEN}Perfect, the first profile is created.${NC}\n"
 
   # Create profile 2
-  printf "${BLUE}Let's setup the second account. Answer the questions below:${NC}\n"
-  read -p "What is the name of your second profile? " profile2
+  printf "${BLUE}Let's setup the second profile. ${NC}\n"
+  read -p "What do you want to call this profile? (chose something that makes sense to you) " profile2
   mkdir ~/.gitswitch/git-credentials/profile2
-  read -p "What is the username of the GitHub account? " p2name
-  read -p "What is the email address associated to the GitHub account? " p2email
-  read -p "What is the Personal Access Key of this account? " p2accesskey
+  read -p "What is your GitHub username for this account? " p2name
+  read -p "What is the email address associated to this GitHub account? " p2email
+  read -p "Finally, what is the Personal Access Key for this account? " p2accesskey
 
   # create config files for profile 2
   echo "[user]" >> ~/.gitswitch/git-credentials/profile2/.gitconfig
@@ -112,7 +112,7 @@ else
   echo "profile1" > ~/.gitswitch/gscurrent
   cp ~/.gitswitch/git-credentials/profile1/.gitconfig ~/.gitconfig 
   cp ~/.gitswitch/git-credentials/profile1/.git-credentials ~/.git-credentials 
-  printf "${GREEN}${profile1} is not the current profile.${NC}\n"
+  printf "${GREEN}${profile1} is now the current profile.${NC}\n"
 
   # download gitswitch script from github and move it to ~/.gitswitch
   printf "${BLUE}Hold on while we do some final bits of configuration...${NC}\n"
@@ -124,7 +124,6 @@ else
   # setup alias 
   echo "alias gitswitch='bash ~/.gitswitch/switch.sh'" >> ~/.bashrc
   printf "${GREEN}Alias set in .bashrc.${NC}\n"
-
 
   # all done
   printf "${GREEN}You can now switch GitHub profiles by typing 'gitswitch' in a new terminal.${NC}\n"
