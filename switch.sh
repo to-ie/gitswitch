@@ -73,6 +73,7 @@ else
 
   # Create profile 1
   printf "${BLUE}Let's setup the first profile.${NC}\n"
+  echo
   read -p "Chose a name for this profile:  " profile1
   mkdir ~/.gitswitch/git-credentials/profile1
   read -p "What is your GitHub username for this account? " p1name
@@ -88,9 +89,11 @@ else
   echo "https://${p1name}:${p1accesskey}@github.com" >> ~/.gitswitch/git-credentials/profile1/.git-credentials
   echo "${profile1}" > ~/.gitswitch/profile1
   printf "${GREEN}Perfect, the first profile is created.${NC}\n"
+  echo
 
   # Create profile 2
   printf "${BLUE}Let's setup the second profile. ${NC}\n"
+  echo
   read -p "Chose a name for this profile: " profile2
   mkdir ~/.gitswitch/git-credentials/profile2
   read -p "What is your GitHub username for this account? " p2name
