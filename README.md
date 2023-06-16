@@ -6,9 +6,9 @@ This script is for Ubuntu (or other Linux distributions) users. We assume that y
 
 Before installing Gitswitch, you might want to have the following info ready, for each account: 
 - A nickname for the account (ie: 'work')
-- the GitHub username
-- the email address linked to the account
-- the personal access key for the GitHub account (generate one [here](https://github.com/settings/tokens))
+- The GitHub username
+- The email address linked to the account
+- The personal access key for the GitHub account (generate one [here](https://github.com/settings/tokens))
 
 ## Install the script
 To install Gitswitch, follow the instructions below. 
