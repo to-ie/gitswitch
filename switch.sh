@@ -34,7 +34,6 @@ if  test -e ~/.gitswitch/gscurrent; then
   printf "${BLUE}You are currently logged in as "
   cat ~/.gitswitch/${current}
   printf "${NC}"
-  echo
   read -p "Press Enter to switch profiles" </dev/tty
 
   # if profile 1, switch to profile 2 
