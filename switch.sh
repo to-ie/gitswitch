@@ -73,7 +73,7 @@ else
 
   # Create profile 1
   printf "${BLUE}Let's setup the first profile.${NC}\n"
-  read -p "What do you want to call this profile? (chose something that makes sense to you) " profile1
+  read -p "Chose a name for this profile:  " profile1
   mkdir ~/.gitswitch/git-credentials/profile1
   read -p "What is your GitHub username for this account? " p1name
   read -p "What is the email address associated to this GitHub account? " p1email
@@ -91,7 +91,7 @@ else
 
   # Create profile 2
   printf "${BLUE}Let's setup the second profile. ${NC}\n"
-  read -p "What do you want to call this profile? (chose something that makes sense to you) " profile2
+  read -p "Chose a name for this profile: " profile2
   mkdir ~/.gitswitch/git-credentials/profile2
   read -p "What is your GitHub username for this account? " p2name
   read -p "What is the email address associated to this GitHub account? " p2email
