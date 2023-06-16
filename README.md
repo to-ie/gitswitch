@@ -37,4 +37,4 @@ rm -r ~/Desktop/gitswitch
 ```
 
 ## Usage
-Once you have installed and configured gitswitch, simply type `gitswitch` in your terminal. That's it! 👍
+Once you have installed and configured gitswitch, simply type `gitswitch` in your terminal. <gr>That's it! 👍
