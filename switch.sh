@@ -11,7 +11,7 @@ NC='\033[0m'        # No Color
 # Check if Github is currently setup. 
 # If it is not, close gitswitch.
 if  test -e ~/.gitconfig; then
-> /dev/null 
+</dev/tty
 else
   echo
   printf "${BLUE}Notice:${NC}\n"
@@ -25,13 +25,15 @@ fi
 # If not, configure. If it is, switch.
 
 # gitswitch is corretly configured
-if  test -e ~/.gitswitch/gscurrent; then > /dev/null 
+if  test -e ~/.gitswitch/gscurrent; then 
   # require prompt
   echo
-  printf "${BLUE}You are about to switch git profile.${NC}\n"
+  current=$(cat ~/.gitswitch/gscurrent)
+
+  # printf "${BLUE}You are about to switch git profile.${NC}\n"
   printf "${BLUE}You are currently logged in as "
-  cat ~/.gitswitch/gscurrent
-  printf "${NC}\n"
+  cat ~/.gitswitch/${current}
+  printf "${NC}"
   echo
   read -p "Press Enter to switch profiles" </dev/tty
 
@@ -40,7 +42,7 @@ if  test -e ~/.gitswitch/gscurrent; then > /dev/null
     cp ~/.gitswitch/git-credentials/profile2/.gitconfig ~/.gitconfig 
     cp ~/.gitswitch/git-credentials/profile2/.git-credentials ~/.git-credentials 
     echo profile2 > ~/.gitswitch/gscurrent
-    cat ~/.gitswitch/profile2 profile2
+    profile2=$(cat ~/.gitswitch/profile2) 
     printf "${GREEN}You are now logged in as ${profile2}${NC}\n"
     echo
     exit
@@ -51,7 +53,7 @@ if  test -e ~/.gitswitch/gscurrent; then > /dev/null
     cp ~/.gitswitch/git-credentials/profile1/.gitconfig ~/.gitconfig 
     cp ~/.gitswitch/git-credentials/profile1/.git-credentials ~/.git-credentials 
     echo profile1 > ~/.gitswitch/gscurrent
-    cat ~/gitswitch/profile1 profile1
+    profile1=$(cat ~/.gitswitch/profile1)
     printf "${GREEN}You are now logged in as ${profile1}${NC}\n"
     echo
     exit
@@ -122,11 +124,10 @@ else
 
   # setup alias 
   echo "alias gitswitch='bash ~/.gitswitch/switch.sh'" >> ~/.bashrc
-  source ~/.bashrc
   printf "${GREEN}Alias set in .bashrc.${NC}\n"
 
 
   # all done
-  printf "${GREEN}You can now switch GitHub profiles by typing 'gitswitch' in your terminal.${NC}\n"
+  printf "${GREEN}You can now switch GitHub profiles by typing 'gitswitch' in a new terminal.${NC}\n"
 
 fi
