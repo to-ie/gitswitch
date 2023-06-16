@@ -22,4 +22,11 @@ and launch the setup:
 bash ~/Desktop/gitswitch/switch.sh
 ```
 
-If this
+Follow the configuration instructions provided by the script. 
+<br>Note: you will need some basic information about your accounts (check the pre-requisit section above).
+
+Once you have installed and configured gitswitch, let's clean up after ourselves:
+```
+rm -r ~/Desktop/gitswitch
+```
+
