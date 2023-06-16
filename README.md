@@ -31,10 +31,10 @@ bash ~/Desktop/gitswitch/switch.sh
 Follow the configuration instructions provided by the script. 
 <br>Note: you will need some basic information about your accounts (check the pre-requisit section above).
 
-Once you have installed and configured gitswitch, let's clean up after ourselves:
+Once you have installed and configured Gitswitch, let's clean up after ourselves:
 ```
 rm -r ~/Desktop/gitswitch
 ```
 
 ## Usage
-Once you have installed and configured gitswitch, simply type `gitswitch` in your terminal. <gr>That's it! 👍
+Once you have installed and configured Gitswitch, simply type `gitswitch` in your terminal. <gr>That's it! 👍
