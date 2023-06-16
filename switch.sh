@@ -61,7 +61,7 @@ if  test -e ~/.gitswitch/gscurrent; then
 
 # gitswitch is not properly configured
 else
-  # start configurations
+  # start configurations 
   echo
   printf "${BLUE}Notice:${NC}\n"
   printf "${BLUE}It looks like gitswitch has not been configured yet.${NC}\n"
