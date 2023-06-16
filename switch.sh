@@ -34,6 +34,7 @@ if  test -e ~/.gitswitch/gscurrent; then
   printf "${BLUE}You are currently logged in as "
   cat ~/.gitswitch/${current}
   printf "${NC}"
+  echo
   read -p "Press Enter to switch profiles" </dev/tty
 
   # if profile 1, switch to profile 2 
@@ -105,6 +106,8 @@ else
   echo "https://${p2name}:${p2accesskey}@github.com" >> ~/.gitswitch/git-credentials/profile2/.git-credentials
   echo "${profile2}" > ~/.gitswitch/profile2
   printf "${GREEN}Perfect, the second profile is created.${NC}\n"
+  echo
+  echo
 
   # set current profile and gscurrent file
   printf "${BLUE}We will now setup ${profile1} as your current profile.${NC}\n"
