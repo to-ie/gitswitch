@@ -98,11 +98,11 @@ else
 
   # create config files for profile 2
   echo "[user]" >> ~/.gitswitch/git-credentials/profile2/.gitconfig
-  echo "  name = ${p1name}" >> ~/.gitswitch/git-credentials/profile2/.gitconfig
-  echo "  email = ${p1email}" >> ~/.gitswitch/git-credentials/profile2/.gitconfig
+  echo "  name = ${p2name}" >> ~/.gitswitch/git-credentials/profile2/.gitconfig
+  echo "  email = ${p2email}" >> ~/.gitswitch/git-credentials/profile2/.gitconfig
   echo "[credential]" >> ~/.gitswitch/git-credentials/profile2/.gitconfig
   echo "  helper = store" >> ~/.gitswitch/git-credentials/profile2/.gitconfig
-  echo "https://${p1name}:${p1accesskey}@github.com" >> ~/.gitswitch/git-credentials/profile2/.git-credentials
+  echo "https://${p2name}:${p1accesskey}@github.com" >> ~/.gitswitch/git-credentials/profile2/.git-credentials
   echo "${profile2}" > ~/.gitswitch/profile2
   printf "${GREEN}Perfect, the second profile is created.${NC}\n"
 
